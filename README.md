@@ -17,3 +17,8 @@
 **`yarn start`**: calls `node dist/index.js`, which compiles and executes the generated JavaScript code.
 
 **`yarn start2`**: calls `ts-node src/index.ts`, which compiles and executes the TypeScript code.
+
+# Milestones
+
+- [X] Database setup with Mikro ORM
+- [ ] GraphQL setup
