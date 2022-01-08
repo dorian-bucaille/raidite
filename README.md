@@ -10,6 +10,8 @@
 
 **`yarn dev`**: calls `nodemon dist/index.js`, which waits for changes to start `node dist/index.js`.
 
+**`npx mikro-orm migration:create`**: creates a new migration file with current schema diff.
+
 ## Optional
 
 **`yarn start`**: calls `node dist/index.js`, which compiles and executes the generated JavaScript code.
