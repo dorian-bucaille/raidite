@@ -51,7 +51,11 @@ export class PostResolver {
     @Arg("id") id: number,
     @Ctx() { em }: MyContext
   ): Promise<boolean> {
-    em.nativeDelete(Post, {_id: id});
+    const post = await em.findOne(Post, { _id: id });
+    if (!post){
+      return false;
+    }
+    await em.removeAndFlush(post);
     return true;
   }
 }
