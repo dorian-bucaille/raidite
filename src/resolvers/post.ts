@@ -52,7 +52,7 @@ export class PostResolver {
     @Ctx() { em }: MyContext
   ): Promise<boolean> {
     const post = await em.findOne(Post, { _id: id });
-    if (!post){
+    if (!post) {
       return false;
     }
     await em.removeAndFlush(post);
