@@ -40,18 +40,40 @@ class UserResponse {
 
 @Resolver()
 export class UserResolver {
-  @Mutation(() => User)
+  @Mutation(() => UserResponse)
   async register(
     @Arg("options") options: UsernamePasswordInput,
     @Ctx() { em }: MyContext
-  ) {
+  ): Promise<UserResponse> {
+    if (options.username.length < 3) {
+      return {
+        errors: [
+          {
+            field: "username",
+            message: "Username length must be greater than 2.",
+          },
+        ],
+      };
+    }
+
+    if (options.password.length < 9) {
+      return {
+        errors: [
+          {
+            field: "password",
+            message: "Password length must be greater than 8.",
+          },
+        ],
+      };
+    }
+
     const hashedPassword = await argon2.hash(options.password); // hash the plain password using argon2
     const user = em.create(User, {
       username: options.username,
       password: hashedPassword,
     });
     await em.persistAndFlush(user);
-    return user;
+    return { user };
   }
 
   @Mutation(() => UserResponse)
