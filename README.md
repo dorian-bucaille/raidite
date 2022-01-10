@@ -21,4 +21,5 @@
 # Milestones
 
 - [X] Database setup with Mikro ORM
-- [ ] GraphQL setup
+- [X] Apollo GraphQL setup
+- [ ] Authentication setup
