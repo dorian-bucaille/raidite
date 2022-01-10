@@ -1,4 +1,20 @@
-# Initialize
+# Purpose
+
+This educational project's goal is to create a fullstack functional clone of [Reddit](www.reddit.com) using the following technologies:
+- React
+- TypeScript
+- GraphQL
+- Apollo
+- Node.js
+- PostgreSQL
+- MikroORM / TypeORM
+- Redis
+- Next.js
+- TypeGraphQL
+- Chakra
+
+The tutorial I'm following to create this work can be found [here](https://youtu.be/I6ypD7qv3Z8). Shoutout to [Ben Awad](https://github.com/benawad) for making learning web dev a fun and interesting task!
+# Setup
 
 **Node v16.13.1** is used, with **npm 8.1.2**. In order to call `yarn XXX`, we must enable corepack by executing `corepack enable`.
 
