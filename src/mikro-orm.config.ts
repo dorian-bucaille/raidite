@@ -3,6 +3,7 @@ import { Post } from "./entities/Post";
 import { MikroORM } from "@mikro-orm/core";
 import path from "path";
 import dotenv from "dotenv";
+import { User } from "./entities/User";
 
 dotenv.config(); // retrieves keys and values defined in the .env file
 
@@ -11,7 +12,7 @@ export default {
     path: path.join(__dirname, "./migrations"), // path to the folder with migrations
     pattern: /^[\w-]+\d+\.[tj]s$/, // regex pattern for the migration files
   },
-  entities: [Post],
+  entities: [Post, User],
   dbName: "raidite",
   type: "postgresql",
   user: process.env.DB_USERNAME,
