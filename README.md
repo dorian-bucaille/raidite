@@ -12,11 +12,13 @@
 
 **`npx mikro-orm migration:create`**: creates a new migration file with current schema diff.
 
-## Optional
+## Secondary
 
 **`yarn start`**: calls `node dist/index.js`, which compiles and executes the generated JavaScript code.
 
 **`yarn start2`**: calls `ts-node src/index.ts`, which compiles and executes the TypeScript code.
+
+**`yarn create:migration`**: calls `mikro-orm migration:create`, which creates migrations corresponding to our entities.
 
 # Milestones
 
