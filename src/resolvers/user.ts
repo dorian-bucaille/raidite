@@ -55,7 +55,7 @@ export class UserResolver {
   @Mutation(() => UserResponse)
   async register(
     @Arg("options") options: UsernamePasswordInput,
-    @Ctx() { em }: MyContext
+    @Ctx() { em, req }: MyContext
   ): Promise<UserResponse> {
     if (options.username.length < 3) {
       return {
@@ -100,6 +100,9 @@ export class UserResolver {
       }
       console.log("Error: ", err.message);
     }
+
+    // Store user session with a cookie (thus keeping them logged in)
+    req.session!.userId = user._id;
 
     return { user };
   }
