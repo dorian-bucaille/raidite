@@ -28,6 +28,8 @@ The tutorial I'm following to create this work can be found [here](https://youtu
 
 **`npx mikro-orm migration:create`**: creates a new migration file with current schema diff.
 
+**`brew services start redis`**: starts the redis client (MacOS).
+
 ## Secondary
 
 **`yarn start`**: calls `node dist/index.js`, which compiles and executes the generated JavaScript code.
