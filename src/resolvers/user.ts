@@ -138,6 +138,13 @@ export class UserResolver {
       };
     }
 
+    // Store user session with a cookie
+    // What's happenning :
+    // 1. sess:auopifdqjahoiphf -> { userId: 1 } : store the session string into redis
+    // 2. express-session signs a cookie and sets it for my browser pouerajflqshoahfsqh
+    // 3. Whenever a request is made : pouerajflqshoahfsqh -> sent to the server
+    // 4. pouerajflqshoahfsqh -> sess:auopifdqjahoiphf : express-session decrypts the browser cookie using COOKIE_SECRET
+    // 5. Make the request to redis : sess:auopifdqjahoiphf -> { userId: 1 }
     req.session!.userId = user._id;
 
     return { user };
