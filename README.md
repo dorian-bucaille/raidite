@@ -42,4 +42,5 @@ The tutorial I'm following to create this work can be found [here](https://youtu
 
 - [X] Database setup with Mikro ORM
 - [X] Apollo GraphQL setup
-- [ ] Authentication setup
+- [X] Authentication setup
+- [X] User session setup
