@@ -22,7 +22,7 @@ const Register: React.FC<registerProps> = ({}) => {
           console.log(values);
         }}
       >
-        {( {isSubmitting} ) => (
+        {({ isSubmitting }) => (
           <Form>
             <InputField
               name="username"
