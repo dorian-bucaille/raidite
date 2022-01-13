@@ -44,3 +44,6 @@ The tutorial I'm following to create this work can be found [here](https://youtu
 - [X] Apollo GraphQL setup
 - [X] Authentication setup
 - [X] User session setup
+- [X] Front end initialization
+- [X] Register page
+- [X] Front/back linking for registration
