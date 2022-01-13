@@ -1,3 +1,7 @@
+# Misc
+.DS_Store
+
+# Server files
 raidite-server/node_modules
 raidite-server/dist
 raidite-server/.env
