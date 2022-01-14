@@ -12,6 +12,7 @@ import session from "express-session";
 import connectRedis from "connect-redis";
 import Redis from "ioredis";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+import cors from "cors";
 
 const main = async () => {
   const orm = await MikroORM.init(microConfig); // connect to database
@@ -21,6 +22,14 @@ const main = async () => {
 
   const RedisStore = connectRedis(session);
   const redis = new Redis(); // uses defaults unless given configuration object
+
+  // Resolve cors issue (related to cookie)
+  app.use(
+    cors({
+      origin: "http://localhost:3000",
+      credentials: true,
+    })
+  );
 
   app.use(
     session({
@@ -57,7 +66,10 @@ const main = async () => {
 
   await apolloServer.start();
 
-  apolloServer.applyMiddleware({ app });
+  apolloServer.applyMiddleware({
+    app,
+    cors: false,
+  });
 
   app.listen(4000, () => {
     console.log("Served started on localhost:4000.");
