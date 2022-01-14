@@ -2,41 +2,41 @@
 .DS_Store
 
 # Server files
-raidite-server/node_modules
-raidite-server/dist
-raidite-server/.env
+server/node_modules
+server/dist
+server/.env
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-raidite-web/node_modules
-raidite-web/.pnp
-raidite-web/.pnp.js
+web/node_modules
+web/.pnp
+web/.pnp.js
 
 # testing
-raidite-web/coverage
+web/coverage
 
 # next.js
-raidite-web/.next/
-raidite-web/out/
+web/.next/
+web/out/
 
 # production
-raidite-web/build
+web/build
 
 # misc
-raidite-web/.DS_Store
-raidite-web/*.pem
+web/.DS_Store
+web/*.pem
 
 # debug
-raidite-web/npm-debug.log*
-raidite-web/yarn-debug.log*
-raidite-web/yarn-error.log*
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
 
 # local env files
-raidite-web/.env.local
-raidite-web/.env.development.local
-raidite-web/.env.test.local
-raidite-web/.env.production.local
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
 
 # vercel
-raidite-web/.vercel
+web/.vercel
